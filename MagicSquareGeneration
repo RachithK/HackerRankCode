@@ -1,0 +1,42 @@
+import numpy
+import numpy as np
+mainarray=[]
+n=5
+buckets = [[0 for col in range(n)] for row in range(n)]
+print(buckets)
+
+i=int(n/2)
+j=n-1
+#print(i,j)
+k=n**2+1
+print((n*k)/2)
+buckets[i][j]=1
+for val in range(2,n*n+1):
+    i, j = i - 1, j + 1
+    print("first", i, j)
+    if i==-1 and j==n:
+        i,j = 0,n-2
+        print("made changes when i==-1 amnd j==n",i,j)
+        buckets[i][j] = val
+    elif i==-1:
+        i=n-1
+        print("made changes when i==-1", i, j)
+        buckets[i][j] = val
+    elif j==n:
+        j=0
+        print("made changes when j==n", i, j)
+        buckets[i][j] = val
+
+    elif buckets[i][j]!=0:
+        print(buckets)
+        i = i+1
+        j = j-2
+
+        buckets[i][j]=val
+    if val == 5:
+        print("val==5",i,j)
+    buckets[i][j]=val
+
+print(np.sum(buckets,axis=0))
+print(np.sum(buckets,axis=1))
+print(buckets)
