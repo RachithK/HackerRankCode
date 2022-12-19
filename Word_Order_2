@@ -1,0 +1,14 @@
+#Enter your code here. Read input from STDIN. Print output to STDOUT
+n=int(input())
+
+#take the input , check in the array , if it exist count and put in dictonary
+b={}
+for i in range(n):
+    val=input()
+    if val in b:
+        b[val]+=1
+    else:
+        b[val]=1
+
+print(len(b.keys()))
+print(" ".join(str(val) for val in b.values()))
