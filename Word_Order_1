@@ -1,0 +1,9 @@
+from collections import Counter
+n=int(input())
+b=[]
+for val in range(n):
+    b.append(input())
+
+print(len(set(b)))
+k=" ".join([str(val) for val in Counter(b).values()])
+print(k)
