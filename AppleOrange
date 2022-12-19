@@ -1,0 +1,63 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'countApplesAndOranges' function below.
+#
+# The function accepts following parameters:
+#  1. INTEGER s
+#  2. INTEGER t
+#  3. INTEGER a
+#  4. INTEGER b
+#  5. INTEGER_ARRAY apples
+#  6. INTEGER_ARRAY oranges
+#
+
+#
+# s: integer, starting point of Sam's house location.
+# t: integer, ending location of Sam's house location.
+# a: integer, location of the Apple tree.
+# b: integer, location of the Orange tree.
+# apples: integer array, distances at which each apple falls from the tree.
+# oranges: integer array, distances at which each orange falls from the tree.
+
+def countApplesAndOranges(s, t, a, b, apples, oranges):
+    # Write your code here
+
+    if isinstance(apples, list):
+        print(sum([1 for x in apples if (x + a) >= s and (x + a) <= t]))
+    else:
+        print(sum([1 for x in range(apples) if (x + a) >= s and (x + a) <= t]))
+    if isinstance(oranges, list):
+        print(sum([1 for x in oranges if (x + b) >= s and (x + b) <= t]))
+    else:
+        print(sum([1 for x in range(oranges) if (x + b) >= s and (x + b) <= t]))
+if __name__ == '__main__':
+    first_multiple_input = input().rstrip().split()
+
+    s = int(first_multiple_input[0])
+
+    t = int(first_multiple_input[1])
+
+    second_multiple_input = input().rstrip().split()
+
+    a = int(second_multiple_input[0])
+
+    b = int(second_multiple_input[1])
+
+    third_multiple_input = input().rstrip().split()
+
+    m = int(third_multiple_input[0])
+
+    n = int(third_multiple_input[1])
+
+    apples = list(map(int, input().rstrip().split()))
+
+    oranges = list(map(int, input().rstrip().split()))
+
+    countApplesAndOranges(s, t, a, b, apples, oranges)
