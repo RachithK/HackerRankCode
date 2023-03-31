@@ -1,0 +1,11 @@
+def sockMerchant(n,ar):
+    for val in ar:
+        if val in visitedcount:
+            visitedcount[val]+=1
+        else:
+            visitedcount[val]=1
+
+    count=0
+    for key in visitedcount.keys():
+        count+=int(visitedcount[key]/2)
+    return count
