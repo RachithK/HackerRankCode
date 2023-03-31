@@ -1,0 +1,9 @@
+def sockMerchant(n, ar):
+    # Write your code here
+    val=collections.Counter(ar)
+    pair={}
+    count=0
+    for key in val:
+        count+=int(val[key]/2)
+
+    return count
